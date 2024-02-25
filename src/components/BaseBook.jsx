@@ -29,7 +29,7 @@ const PageCover = React.forwardRef((props, ref) => {
             <option>Unit</option>
           </Form.Select>
           <Button variant="success">Cancle</Button>
-          <Button variant="success" id="next-btn" onClick={props.goNextPage}>Next button</Button>
+          <Button variant="success" onClick={props.goNextPage}>Next button</Button>
         </Form>
       </div>
     </div>
@@ -41,7 +41,7 @@ const Ingredients = React.forwardRef((props, ref) => {
     <div className="book__page" ref={ref}>
       <div className="book__page-content">
         <h2 className="book__page-header">Ingredients</h2>
-        <Button variant="success" id="next-btn" onClick={props.goPrevPage}>prev button</Button>
+        <Button variant="success" onClick={props.goPrevPage}>prev button</Button>
       </div>
     </div>
   );
@@ -101,21 +101,21 @@ const BaseBook = () => {
 
   return (
     <div className="container base-book">
-      <div style={{ transform:  opened ? 'translateX(50%)' : '' }} id="book" className="book">
+      <div style={{ transform:  opened ? 'translateX(50%)' : '' }} className="base-book__container">
         {pageContents.map((page, index) => (
           <div
             key={index}
             id={`p${index + 1}`}
-            className={`paper ${index < currentLocation - 1 ? 'flipped' : ''}`}
+            className={`base-book__paper ${index < currentLocation - 1 ? 'base-book__paper--flipped' : ''}`}
             style={{ zIndex: index + 1 === currentLocation ? numOfPapers : 1 }}
           >
-            <div className="front">
-              <div className={`front-content`}>
+            <div className="base-book__paper-front">
+              <div className="base-book__paper-front--content">
                 {page.front}
               </div>
             </div>
-            <div className="back">
-              <div className={`back-content`}>
+            <div className="base-book__paper-back">
+              <div className="base-book__paper-back--content">
                 {page.back}
               </div>
             </div>
