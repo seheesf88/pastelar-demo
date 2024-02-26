@@ -47,7 +47,7 @@
   }
 
   &__paper-front--content,
-  &__paper-front--content {
+  &__paper-back--content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -80,13 +80,38 @@
   z-index: 1;
 }
 
-// .cover-page {
-//   border: 1px solid red;
-//   width: 100%;
-//   height: 100%;
+.cover-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-//   &__form-unit {
-//     display: flex;
-//     flex-direction: 'row';
-//   }
-// }
+  &__submit-btn {
+    justify-self: end;
+    align-self: flex-end;
+  }
+}
+
+.ingredients-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__prev-btn { 
+    align-self: flex-start;
+  }
+}
+
+.instruction-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__button-groups {
+    align-self: center;
+  }
+}

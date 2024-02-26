@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BaseBook from '../components/BaseBook';
+import BaseBook from '../components/BaseBook/BaseBook';
 import Button from 'react-bootstrap/Button';
 
 const Home = () => {
