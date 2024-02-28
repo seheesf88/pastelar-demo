@@ -6,6 +6,7 @@ import SearchBox from '../BaseSearchBox';
 import { GrCaretPrevious, GrCaretNext } from "react-icons/gr";
 import { TiDeleteOutline } from "react-icons/ti";
 
+// dummy data
 const ingredients = [
   {ingredientName: 'butter', amount: '10g', cost: 10},
   {ingredientName: 'milk', amount: '100ml', cost: 1}
@@ -18,8 +19,14 @@ const Ingredients = ({goPrevPage, goNextPage}) => {
   };
 
   const removeItem = (e) => {
+    // NOT sure if these items can be removable. 
     console.log(e)
   };
+
+  useEffect(() => {
+    const total = ingredients.reduce((acc, curr) => acc + curr.cost, 0);
+    setTotalPrice(total);
+  }, [ingredients]);
 
   useEffect(() => {
     function handleResize() {

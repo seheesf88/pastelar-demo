@@ -10,7 +10,7 @@ function App() {
         <Container className="mx-0">
           <Navbar.Brand href="/">Pastelar demo</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">Dashboard.</Nav.Link>
             <Nav.Link href="/about">About.</Nav.Link>
           </Nav>
         </Container>
