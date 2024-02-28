@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { GrCaretPrevious } from "react-icons/gr";
 import { GoPlusCircle } from "react-icons/go";
 
-const Instructions = ({ name = 'pate a choux', goPrevPage, closeBook }) => {
+const Instructions = ({ name, goPrevPage, closeBook, createRecipe }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [steps, setSteps] = useState(Array(10).fill('').map((_, index) => ({ step: index + 1, value: '' })));
 
@@ -17,7 +17,12 @@ const Instructions = ({ name = 'pate a choux', goPrevPage, closeBook }) => {
   };
 
   const handleSubmit = () => {
-    console.log(steps);
+    const hasEmptyStep = steps.some(step => step.value.trim() === '');
+
+    if (hasEmptyStep) {
+      createRecipe(steps);
+      setSteps(Array(10).fill('').map((_, index) => ({ step: index + 1, value: '' })));
+    }
   };
 
   useEffect(() => {

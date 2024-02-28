@@ -10,12 +10,13 @@ const BaseBook = ({ closeBook }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentLocation, setCurrentLocation] = useState(1);
   const [opened, setOpened] = useState(false);
+  const [data, setData] = useState({})
 
   const numOfPapers = 2;
   const maxLocation = numOfPapers + 1;
 
   const goNextPage = (updatedFormData) => {
-    console.log(updatedFormData)
+    setData(updatedFormData)
     if(windowWidth < 1000) {
       setCurrentLocation((prevLocation) => prevLocation + 1);
     }
@@ -37,13 +38,19 @@ const BaseBook = ({ closeBook }) => {
     }
   };
 
+  const createRecipe = (steps) => {
+    setData(prevData => ({ ...prevData, instructions: steps }));
+    // create post request here
+    closeBook()
+  }
+
   const pageContents = [
     {
       front: <PageCover goNextPage={goNextPage} closeBook={closeBook}/>,
       back: <Ingredients goPrevPage={goPrevPage} />
     },
     {
-      front: <Instructions closeBook={closeBook}/>,
+      front: <Instructions name={data.name} closeBook={closeBook} createRecipe={createRecipe} />,
       back: null
     }
   ];
