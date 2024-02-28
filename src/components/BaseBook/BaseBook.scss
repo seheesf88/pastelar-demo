@@ -2,7 +2,7 @@
   &__container {
     position: relative;
     width: 550px;
-    height: 650px;
+    height: 800px;
     transition: transform 0.5s;
   }
 
@@ -87,8 +87,9 @@
   justify-content: space-between;
 
   &__submit-btn {
-    justify-self: end;
-    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-self: end;
   }
 }
 
@@ -99,19 +100,87 @@
   flex-direction: column;
   justify-content: space-between;
 
-  &__prev-btn { 
-    align-self: flex-start;
+  &__prev-btn {
+    align-self: end;
   }
 }
 
-.instruction-page {
+.instructions-page {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-height: 550px;
+    overflow-y: auto;
+  }
+
+  &__content-steps {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__content-step {
+    min-width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #F2F2F2;
+    color: #919191;
+    font-weight: 800;
+  }
+
   &__button-groups {
     align-self: center;
+  }
+}
+
+
+.form {
+  &__input {
+    border-color: #F2F2F2 !important;
+    border-radius: 15px !important;
+    background-color: #F2F2F2 !important;
+  }
+
+  &__label {
+    color: #919191;
+  }
+
+  &__select {
+    border-color: #F2F2F2 !important;
+    border-radius: 15px !important;
+    background-color: #F2F2F2 !important;
+  }
+
+  &__check {
+    .form-check-input {
+      background-color: #919191 !important;
+      border-color: #F2F2F2 !important;
+    }
+  }
+
+  &__search-box {
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    background-color: #F2F2F2 !important;
+    border-color: #F2F2F2 !important;
+  }
+
+  &__search-box-icon {
+    cursor: pointer;
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+    background-color: #F2F2F2 !important;
+    border-color: #F2F2F2 !important;
+  }
+
+  &__button {
+    border-radius: 25px !important;
   }
 }

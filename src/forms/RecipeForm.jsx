@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import BaseInput from '../components/BaseInput';
+import BaseSelect from '../components/BaseSelect';
 import { CATEGORY, UNIT } from '../utils/constant';
 
 const RecipeForm = ({ formData, setFormData }) => {
@@ -13,27 +15,26 @@ const RecipeForm = ({ formData, setFormData }) => {
 
   return (
     <Form className="cover-page__form row g-3 justify-content-center">
-      <div className="col-md-6">
-        <Form.Select 
+      <div className="col-md-6 mb-5">
+        <BaseSelect 
           aria-label="Category select" 
           name="category"
           value={formData.category}
-          onChange={handleChange}>
-          <option value="">Category</option>
-          {CATEGORY.map(option => (
-            <option key={option.value} value={option.value}>{option.title}</option>
-          ))}
-        </Form.Select>
+          onChange={handleChange}
+          defaultOption="Category"
+          options={CATEGORY}
+        />
       </div>
-      <div className="col-md-8">
-        <Form.Control 
+      <div className="col-md-8 mb-3">
+        <BaseInput
           type="text" 
           placeholder="Name" 
           name="name"
           value={formData.name}
-          onChange={handleChange} />
+          onChange={handleChange}
+        />
       </div>
-      <div className="col-md-8 d-flex justify-content-center">
+      <div className="col-md-8 d-flex justify-content-center mb-2">
         <Form.Check
           type="switch"
           id="custom-switch"
@@ -41,50 +42,43 @@ const RecipeForm = ({ formData, setFormData }) => {
           name="isUsedInOtherRecipes"
           checked={formData.isUsedInOtherRecipes}
           onChange={handleChange}
+          className="form__check"
         />
       </div>
       <div className="col-md-6">
         <div className="row">
           <div className="col-6">
-            <Form.Select 
+            <BaseSelect 
+              aria-label="quantity" 
               name="quantity"
               value={formData.quantity}
-              onChange={handleChange}>
-              <option value="">Quantity</option>
-              {[...Array(100).keys()].map(n => (
-                <option key={n + 1} value={n + 1}>{n + 1}</option>
-              ))}
-            </Form.Select>
+              onChange={handleChange}
+              defaultOption="Quantity"
+              options={Array.from({ length: 100 }, (_, index) => ({ value: index + 1 }))}
+            />
           </div>
           <div className="col-6">
-            <Form.Select 
-              aria-label="Unit select 2" 
+            <BaseSelect 
+              aria-label="Unit" 
               name="unit"
               value={formData.unit}
-              onChange={handleChange}>
-              <option value="">Unit</option>
-              {UNIT.map(option => (
-                <option key={option.value} value={option.value}>{option.title}</option>
-              ))}
-            </Form.Select>
+              onChange={handleChange}
+              defaultOption="Unit"
+              options={UNIT}
+            />
           </div>
         </div>
       </div>
 
       <div className="col-12">
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Notes</Form.Label>
-          <Form.Control 
-            as="textarea" 
-            rows={5} 
-            name="notes"
-            value={formData.notes}
-            onChange={handleChange}
-          />
-        </Form.Group>
-      </div>
-      <div className="col-2 justify-content-center">
-        <Button variant="success">Cancel</Button>
+        <BaseInput
+          label="Notes"
+          as="textarea" 
+          rows={12} 
+          name="notes"
+          value={formData.notes}
+          onChange={handleChange}
+        />
       </div>
     </Form>
   );

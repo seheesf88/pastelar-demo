@@ -23,11 +23,11 @@ const Ingredients = (props) => {
   };
 
   return (
-    <div className="ingredients-page pt-5 pb-3 px-3">
+    <div className="ingredients-page pt-5 pb-3 px-3 ps-3 pe-5">
       <div>
-        <h2 className="ingredients-page__header text-center">Ingredients</h2>
+        <h2 className="ingredients-page__header text-center mb-2">Ingredients</h2>
         <SearchBox onSearch={handleSearch} />
-        <div className="ingredients-page__content">
+        <div className="ingredients-page__content mt-4">
           <Table striped borderless hover>
             <thead>
               <tr>
@@ -47,20 +47,21 @@ const Ingredients = (props) => {
                   </td>
                 </tr>
               ))}
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td>total: {totalPrice}</td>
-                  <td></td>
-                </tr>
             </tbody>
           </Table>
         </div>
       </div>
-      <GrCaretPrevious
-        className="ingredients-page__prev-btn"
-        onClick={props.goPrevPage}
-      />
+      <div className="row">
+        <div className="col-4 ingredients-page__prev-btn ps-3 pb-2">
+          <GrCaretPrevious
+            onClick={props.goPrevPage}
+          />
+        </div>
+        <div className="col-4 text-center">
+          <div>Cost per kg</div>                
+          <div>${totalPrice}</div>
+        </div>
+      </div>
     </div>
   );
 };
