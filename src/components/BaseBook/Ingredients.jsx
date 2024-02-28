@@ -8,8 +8,6 @@ import { TiDeleteOutline } from "react-icons/ti";
 
 const ingredients = [
   {ingredientName: 'butter', amount: '10g', cost: 10},
-  {ingredientName: 'milk', amount: '100ml', cost: 1},
-  {ingredientName: 'butter', amount: '10g', cost: 10},
   {ingredientName: 'milk', amount: '100ml', cost: 1}
 ]
 const Ingredients = ({goPrevPage, goNextPage}) => {

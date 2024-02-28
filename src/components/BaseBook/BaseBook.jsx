@@ -6,7 +6,7 @@ import Ingredients from './Ingredients';
 import Instructions from './Instructions';
 
 
-const BaseBook = () => {
+const BaseBook = ({ closeBook }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentLocation, setCurrentLocation] = useState(1);
   const [opened, setOpened] = useState(false);
@@ -37,13 +37,9 @@ const BaseBook = () => {
     }
   };
 
-  const closeBook = () => {
-    console.log('closed')
-  }
-    
   const pageContents = [
     {
-      front: <PageCover goNextPage={goNextPage} />,
+      front: <PageCover goNextPage={goNextPage} closeBook={closeBook}/>,
       back: <Ingredients goPrevPage={goPrevPage} />
     },
     {

@@ -5,13 +5,12 @@ import Button from 'react-bootstrap/Button';
 const Home = () => {
   const [openBook, setOpenBook] = useState(false)
   return (
-    <div className="home" style={{ display: 'flex', justifyContent: 'center' }}>
-      <BaseBook closeBook={() => setOpenBook(false)} />
-      {/* {
+    <div className="home mt-5" style={{ display: 'flex', justifyContent: 'center'}}>
+      {
         openBook ?
         <BaseBook closeBook={() => setOpenBook(false)} /> :
         <Button variant="success" onClick={() => setOpenBook(true)}>Create Recipe</Button>
-      } */}
+      }
     </div>
   )
 }

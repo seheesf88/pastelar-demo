@@ -5,7 +5,7 @@ import RecipeForm from '../../forms/RecipeForm';
 import { Button } from 'react-bootstrap';
 import { GrCaretNext } from "react-icons/gr";
 
-const PageCover = ({ goNextPage }) => {
+const PageCover = ({ goNextPage, closeBook }) => {
   const [formData, setFormData] = useState({
     category:"",
     name:"",
@@ -25,7 +25,7 @@ const PageCover = ({ goNextPage }) => {
       notes:""
     });
 
-    alert('cancel!')
+    closeBook()
   }
 
   return (
