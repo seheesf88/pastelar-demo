@@ -13,7 +13,8 @@ const BaseBook = () => {
   const numOfPapers = 2;
   const maxLocation = numOfPapers + 1;
 
-  const goNextPage = () => {
+  const goNextPage = (updatedFormData) => {
+    console.log(updatedFormData)
     if (currentLocation < maxLocation) {
       setOpened(true);
       setCurrentLocation(currentLocation + 1);
