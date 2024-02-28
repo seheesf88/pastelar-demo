@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { GrCaretPrevious } from "react-icons/gr";
 import { GoPlusCircle } from "react-icons/go";
 
-const Instructions = ({ name = 'pate a choux', closeBook }) => {
+const Instructions = ({ name = 'pate a choux', goPrevPage, closeBook }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [steps, setSteps] = useState(Array(10).fill('').map((_, index) => ({ step: index + 1, value: '' })));
 
   const handleInputChange = (index, value) => {
@@ -17,6 +19,16 @@ const Instructions = ({ name = 'pate a choux', closeBook }) => {
   const handleSubmit = () => {
     console.log(steps);
   };
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="instructions-page pt-5 pb-3 ps-5 pe-3">
@@ -43,9 +55,18 @@ const Instructions = ({ name = 'pate a choux', closeBook }) => {
         </div>
       </div>
       </div>
-      <div className="instruction-page__button-groups d-flex justify-content-center">
-        <Button onClick={closeBook} variant="outline-secondary" className="form__button me-2">Cancel</Button>
-        <Button onClick={handleSubmit} variant="outline-secondary" className="form__button">Submit</Button>
+      <div className="row">
+        <div className="col-4 ingredients-page__prev-btn ps-3 pb-2">
+          { windowWidth < 1000 && (
+            <GrCaretPrevious
+              onClick={goPrevPage}
+            />
+          )}
+        </div>
+        <div className="instructions-page__button-groups col-4">
+          <Button onClick={closeBook} variant="outline-secondary" className="form__button me-2">Cancel</Button>
+          <Button onClick={handleSubmit} variant="outline-secondary" className="form__button">Submit</Button>
+        </div>
       </div>
     </div>
   );
