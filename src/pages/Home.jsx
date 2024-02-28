@@ -25,7 +25,7 @@ const Home = () => {
 
               <h2>Technology Stack</h2>
               <p><strong>Frontend:</strong> React</p>
-              <p><strong>Styling:</strong> React Bootstrap, Sass</p>
+              <p><strong>Styling:</strong> React, Bootstrap, Sass, react-icons</p>
 
               <h2>User Experience Flow</h2>
               <ol>

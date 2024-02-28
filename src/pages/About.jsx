@@ -12,8 +12,8 @@ const About = () => {
             Software Engineer with 4+ years of experience adept at front end development with a focus on reliability, scalability and innovative solutions.
             Thrives in a fast-paced startup culture, possessing keen attention to detail, solid problem-solving abilities, and strong communication skills.
           </Card.Text>
-          <Card.Link href="#">Linkedin</Card.Link>
-          <Card.Link href="#">Resume</Card.Link>
+          <Card.Link href="https://www.linkedin.com/in/sehee-son/">Linkedin</Card.Link>
+          <Card.Link href="https://github.com/seheesf88">Github</Card.Link>
         </Card.Body>
       </Card>
     </div>

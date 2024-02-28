@@ -8,7 +8,7 @@ npm start
 ```
 
 ## tech stacks
-#### React.js React Router, boostrap, Sass
+#### React.js React Router, boostrap, Sass, react-icons
 
 ## Author
 #### by.SeHee
