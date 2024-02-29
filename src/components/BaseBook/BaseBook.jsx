@@ -16,6 +16,7 @@ const BaseBook = ({ closeBook }) => {
   const maxLocation = numOfPapers + 1;
 
   const goNextPage = (updatedFormData) => {
+    console.log('??')
     setData(updatedFormData)
     if(windowWidth < 1000) {
       setCurrentLocation((prevLocation) => prevLocation + 1);
@@ -91,7 +92,7 @@ const BaseBook = ({ closeBook }) => {
         ))}
       </div>
     :
-      <div>
+      <div className="base-book__container mt-2">
       {currentLocation === 1 && (
         <div className="base-book__paper-front">
           <div className="base-book__paper-front--content">
