@@ -4,16 +4,30 @@ import Card from 'react-bootstrap/Card';
 const About = () => {
   return (
     <div className="row d-flex justify-content-center mt-5">
-      <Card className="col-8">
+      <Card className="col-10 col-md-8">
         <Card.Body>
           <Card.Title>SeHee Son.</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">San Francisco, CA</Card.Subtitle>
-          <Card.Text>
-            Software Engineer with 4+ years of experience adept at front end development with a focus on reliability, scalability and innovative solutions.
-            Thrives in a fast-paced startup culture, possessing keen attention to detail, solid problem-solving abilities, and strong communication skills.
+          <Card.Text className="row">
+            <div className="col-12 col-xm-8">
+              <p>Hi, I am SeHee, a software engineer specializing in frontend development.
+              I am proficient in JavaScript, React, React Native, and the Vue framework.
+              Over the past 5 years, I've worked in fast-paced startup environments that required collaborative work, 
+              strong communication skills, problem-solving ability, and flexibility. I have successfully completed 
+              all my tasks and brought a positive aspect to the team!</p>
+
+              <p>Besides work, I am passionate about exploring desserts, baking, and finding good sweet spots around the world.
+              I am really excited about Pastelar AI's mission to connect all sweets. Please take a look at my work, 
+              and let me know which part you want to see more of, as this work is missing many features. I can show more 
+              about UI styling work, including Storybook, theming, etc., or I can show more about integrating RESTful APIs 
+              along with OpenAI. I can also demonstrate my knowledge in React, Redux, and react hooks. Please let me know!</p>
+            </div>
+            <img src="mycake.png" width="100" className="col-12 col-xm-4" style={{ borderRadius: '30px'}}/>
           </Card.Text>
           <Card.Link href="https://www.linkedin.com/in/sehee-son/">Linkedin</Card.Link>
           <Card.Link href="https://github.com/seheesf88">Github</Card.Link>
+          <Card.Link href="https://seheeson.com">Portfolio</Card.Link>
+          <Card.Link><a href="../SeHee_Son_resume.pdf" download>Resume</a></Card.Link>
         </Card.Body>
       </Card>
     </div>

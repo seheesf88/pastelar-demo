@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Router, Routes, Route, Link } from 'react-router-dom';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import Home from './pages/Home'
 import About from './pages/About'
@@ -25,7 +25,7 @@ function App() {
       </Navbar>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
