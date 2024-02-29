@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pastelar-demo/static/css/main.4f6d3ef4.css",
-    "main.js": "/pastelar-demo/static/js/main.c1618e9e.js",
+    "main.js": "/pastelar-demo/static/js/main.a6fb5d12.js",
     "static/js/453.27ef4059.chunk.js": "/pastelar-demo/static/js/453.27ef4059.chunk.js",
     "index.html": "/pastelar-demo/index.html",
     "main.4f6d3ef4.css.map": "/pastelar-demo/static/css/main.4f6d3ef4.css.map",
-    "main.c1618e9e.js.map": "/pastelar-demo/static/js/main.c1618e9e.js.map",
+    "main.a6fb5d12.js.map": "/pastelar-demo/static/js/main.a6fb5d12.js.map",
     "453.27ef4059.chunk.js.map": "/pastelar-demo/static/js/453.27ef4059.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4f6d3ef4.css",
-    "static/js/main.c1618e9e.js"
+    "static/js/main.a6fb5d12.js"
   ]
 }
